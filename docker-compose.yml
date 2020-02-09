@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   netdisco-postgresql:
-    image: netdisco/netdisco:latest-postgresql
+    image: farktronix/netdisco-arm:latest-postgresql
     volumes:
       - "./netdisco/pgdata:/var/lib/postgresql/data"
 #    build:
@@ -12,7 +12,7 @@ services:
 #      context: netdisco-base
 #    scale: 0
   netdisco-backend:
-    image: netdisco/netdisco:latest-backend
+    image: farktronix/netdisco-arm:latest-backend
     volumes:
       - "./netdisco/nd-site-local:/home/netdisco/nd-site-local"
       - "./netdisco/config:/home/netdisco/environments"
@@ -25,7 +25,7 @@ services:
 #    build:
 #      context: netdisco-backend
   netdisco-web:
-    image: netdisco/netdisco:latest-web
+    image: farktronix/netdisco-arm:latest-web
     volumes:
       - "./netdisco/nd-site-local:/home/netdisco/nd-site-local"
       - "./netdisco/config:/home/netdisco/environments"
